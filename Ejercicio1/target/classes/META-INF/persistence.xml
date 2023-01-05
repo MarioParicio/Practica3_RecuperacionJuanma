@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+     http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+    <persistence-unit name="default">
+
+        <description>
+            Ejemplo basico de un CRUD con hibenate
+        </description>
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+       <!--Defino las clases que van a usar Hibernate-->
+        <class>jmx.ad.Modelo.Departamento(</class>
+        <class>jmx.ad.Modelo.Empleado</class>
+
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/personal"/>
+            <property name="connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
+            <property name="hibernate.connection.user" value="root"/>
+            <property name="hibernate.connection.password" value="1234"/>
+            <property name="dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.show_sql" value="true"/>
+
+
+
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+
+        </properties>
+    </persistence-unit>
+</persistence>
